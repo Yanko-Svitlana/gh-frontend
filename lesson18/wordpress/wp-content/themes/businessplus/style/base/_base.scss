@@ -1,0 +1,109 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body{
+  background: white;
+  font: 14px/24px "Open Sans";
+  color: $font-second-color;
+}
+
+a{
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+p{
+  font: 14px/24px "Open Sans";
+  color: $font-second-color;
+  padding: 25px 0 45px 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+
+}
+
+.menu-item.active {
+  a {
+    color: $secondary-color;
+  }
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color: none;
+}
+.section {
+  padding: 100px 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-heading {
+
+  h2 {
+    font: 800 30px/24px Raleway;
+    text-transform: uppercase;
+    color: $font-main-color
+  }
+  .short-description {
+    font: italic 16px/30px Lora;
+    color: $font-main-color
+  }
+}
+
+h3 {
+  font: 800 16px/24px Raleway;
+  color: $font-main-color;
+  text-transform: uppercase;
+  &:hover, &:focus {
+    color: $secondary-color ;
+  }
+}
+
+blockquote {
+  display: block;
+  padding: 25px 45px;
+  font: italic 15px/28px Lora;
+}
+
+.top {
+  padding-bottom: 300px;
+}
+.top.section {
+  padding-top: 0;
+}
+
+.triangles {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 15px;
+    background: url("../img/triangles.png") no-repeat;
+    width: 218px;
+    height: 101px;
+  }
+}
+.even {
+  background: $background;
+}
+
+@media screen and (min-width: 1040px){
+  .triangles{
+    &::after {
+      right: 200px;
+    }
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .container {
+    max-width: 1140px;
+  }
+}

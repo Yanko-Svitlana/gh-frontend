@@ -1,0 +1,122 @@
+header {
+  padding: 35px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.logo {
+  display: inline-flex;
+  margin: -10px 10px 0 0;
+  width: 164px;
+  height: 40px;
+
+  a {
+    width: 164px;
+    height: 34px;
+    overflow: hidden;
+  }
+}
+
+.contact-phone-number {
+  display: block;
+  padding-top: 10px;
+  color: white;
+  line-height: 23px;
+
+  &::before {
+    content: "";
+    margin-right: 10px;
+    display: inline-flex;
+    background: url("../img/phone-icon.png") no-repeat;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    vertical-align: bottom;
+  }
+}
+.navbar-default {
+  background: transparent;
+  border: none;
+  font: 700 14px "Open Sans";
+  text-transform: uppercase;
+}
+.navbar{
+
+  margin-bottom: 0;
+}
+
+
+
+.navbar-default{
+  .navbar-toggle {
+    border: none;
+    .fa-bars{
+      font-size: 25px;
+      color: #fff;
+    }
+    &:hover, &:focus{
+      border: none;
+      background: transparent;
+      .fa-bars {
+        color: $secondary-color;
+      }
+    }
+  }
+  .navbar-nav {
+    display: inline-flex;
+    justify-content: space-around;
+    li {
+      line-height: 30px;
+      &:hover, &:focus {
+        outline: none;
+        .submenu{
+          display: block;
+        }
+      }
+      a{
+        color: #FFFFFF;
+        &:hover, &:focus {
+
+          outline: none;
+          color: $secondary-color;
+
+        }
+      }
+    }
+    >.active {
+      >a {
+        color: $secondary-color;
+        background: transparent;
+        &:hover, &:focus{
+          color: $secondary-color;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
+.submenu{
+  position: absolute;
+  display: none;
+  margin-left: 16px;
+  li{
+    a{ color: $secondary-color;
+      background: transparent;
+      &:hover, &:focus {
+        color: $secondary-color;
+        background: transparent;
+      }
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 430px) {
+  .contact-phone-number {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
+
+@media screen and (min-width: 980px) {
+}

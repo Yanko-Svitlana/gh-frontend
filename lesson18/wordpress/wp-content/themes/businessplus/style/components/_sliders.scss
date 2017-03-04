@@ -1,0 +1,43 @@
+.hero{
+
+  .slick-dots {
+    margin: 0 10px 40px 0;
+    li button{
+      width: 25px;
+      height: 4px;
+
+      &:before {
+        position: relative;
+        display: inline-block;
+        width: 25px;
+        height: 4px;
+        padding: 0;
+        cursor: pointer;
+        background: #8f8f8f;
+        font-size: 0;
+      }
+    }
+  }
+
+  .slick-dots li.slick-active button:before{
+    opacity: 1;
+    color: $secondary-color;
+    background: $secondary-color;
+  }
+}
+
+.testimonials, .partners{
+  .slick-dots {
+    text-align: left;
+
+    li button:before {
+      font-size: 9px;
+      color: #36a8ff;
+      opacity: 1;
+    }
+  }
+  .slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: $secondary-color;
+  }
+}

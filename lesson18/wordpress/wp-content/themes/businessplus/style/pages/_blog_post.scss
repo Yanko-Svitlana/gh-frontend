@@ -1,0 +1,107 @@
+.post-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subheading {
+  padding-bottom: 25px;
+}
+.post-quote {
+  margin: 0 0 45px 95px;
+  background: #fef1de;
+  border-left: 4px solid $secondary-color;
+}
+
+.author-about {
+  padding-bottom: 70px;
+  border-bottom: 1px solid #e6e9ee;
+
+  .author-info {
+    background: $primary-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      margin-top: 90px;
+      display: block;
+      width: 10px;
+      margin-left: -10px;
+      border-right: 10px solid #36a8ff;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+    }
+
+    .author-name {
+      margin: 28px 50px 25px;
+      color: white;
+    }
+    .author-intro {
+      margin: 0 80px 40px 50px;
+      color: white;
+      padding: 0;
+    }
+  }
+}
+
+.post-comments {
+  padding: 70px 0;
+}
+.comment {
+  padding: 40px 0;
+  border-bottom: 1px solid #e6e9ee;
+  &:first-child {
+    padding-top: 0;
+  }
+}
+.subcomment {
+  padding: 40px 0;
+  border-bottom: 1px solid #e6e9ee;
+}
+.comment-author {
+  display: inline-block;
+  margin-bottom: 20px;
+  font: 700 13px/24px "Proxima Nova";
+  text-transform: uppercase;
+}
+.date-comment {
+  display: inline-block;
+  margin-bottom: 20px;
+  font: 600 13px /24px "Proxima Nova";
+  text-transform: uppercase;
+  color: $secondary-color;
+}
+.reply {
+  margin-top: 25px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 2px 0 0 5px;
+  border: 2px solid $secondary-color;
+  @include border-radius(50px);
+
+  .fa-reply{
+    color:$secondary-color
+  }
+}
+
+
+.leave-comment {
+  background: $background;
+
+  .container {
+    &::after {
+      @include triangles;
+    }
+  }
+}
+
+
+@media screen and (min-width: 1040px) {
+  .leave-comment {
+    .container {
+      &::after {
+        right: 200px;
+      }
+    }
+  }
+}

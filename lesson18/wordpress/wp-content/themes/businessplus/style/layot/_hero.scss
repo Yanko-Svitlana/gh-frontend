@@ -1,0 +1,35 @@
+.hero {
+  background: url("../img/hero-background.png") no-repeat;
+  background-size: cover;
+}
+.hero.section {
+  padding: 0;
+}
+
+.intro{
+  padding: 200px 0;
+  
+  .heading {
+    color: white;
+  }
+  .logo-heading {
+    padding: 15px 0 20px;
+    display: block;
+    font-weight: 800;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .intro-description {
+    padding-bottom: 60px;
+    font: italic 15px/30px Lora;
+    color: white;
+  }
+}
+
+
+@media screen and (min-width: 510px){
+  .intro-description {
+    width: 510px;
+  }
+}

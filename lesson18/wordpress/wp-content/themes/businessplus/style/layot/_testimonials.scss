@@ -1,0 +1,57 @@
+.first {
+  background: url("../img/quote-icon-grey.png")no-repeat;
+}
+.second {
+  background: url("../img/quote-icon-blue.png")no-repeat;
+}
+.third {
+  background: url("../img/quote-icon-orange.png") no-repeat;
+}
+.testimonials-slider {
+  padding-top: 20px;
+
+}
+.testimonial {
+  padding-top: 28px;
+  padding-bottom: 50px;
+}
+.author {
+  padding-bottom: 60px;
+
+  img {
+    width: auto;
+    float: left;
+    padding-right: 40px;
+  }
+  .testimonial-author {
+    padding-top: 10px;
+  }
+}
+.dots {
+  float: left;
+  .dot {
+    display: inline-block;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+    background: $primary-color;
+    @include border-radius(10px);
+  }
+
+  .active {
+    background: $secondary-color;
+  }
+}
+
+@media screen and (min-width: 610px) {
+  .testimonial-item {
+    display: inline-block;
+    width: 48%;
+  }
+}
+
+@media screen and(min-width: 810px) {
+  .testimonial-item{
+    width: 33%;
+  }
+}
