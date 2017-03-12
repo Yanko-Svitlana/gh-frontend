@@ -1,43 +1,66 @@
-.hero{
+.hero {
 
   .slick-dots {
-    margin: 0 10px 40px 0;
-    li button{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    li button {
+      border: none;
       width: 25px;
       height: 4px;
+      margin: 0 5px;
+      font-size: 0;
+    }
 
-      &:before {
-        position: relative;
-        display: inline-block;
-        width: 25px;
-        height: 4px;
-        padding: 0;
-        cursor: pointer;
-        background: #8f8f8f;
+    li.slick-active button {
+      background: #ffaf36;
+    }
+  }
+}
+.testimonials-slider{
+  .slick-dots {
+    display: inline-flex;
+
+    >li {
+      button {
+        display: block;
+        border: 1px solid #36a8ff;
+        border-radius: 25px;
+        width: 9px;
+        height: 15px;
+        margin: 0 5px;
         font-size: 0;
+        background: #36a8ff;
+      }
+    }
+    >li.slick-active {
+      button {
+        color: #ffaf36;
       }
     }
   }
-
-  .slick-dots li.slick-active button:before{
-    opacity: 1;
-    color: $secondary-color;
-    background: $secondary-color;
-  }
 }
 
-.testimonials, .partners{
+.partners-slider{
   .slick-dots {
-    text-align: left;
+    display: inline-flex;
 
-    li button:before {
-      font-size: 9px;
-      color: #36a8ff;
-      opacity: 1;
+    >li {
+      button {
+        display: block;
+        border: 1px solid #36a8ff;
+        border-radius: 25px;
+        width: 9px;
+        height: 15px;
+        margin: 0 5px;
+        font-size: 0;
+        background: #36a8ff;
+      }
     }
-  }
-  .slick-dots li.slick-active button:before {
-    opacity: 1;
-    color: $secondary-color;
+    >li.slick-active {
+      button {
+        color: #ffaf36;
+      }
+    }
   }
 }

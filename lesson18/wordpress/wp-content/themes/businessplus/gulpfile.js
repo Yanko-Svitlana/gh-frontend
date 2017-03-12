@@ -25,7 +25,8 @@
 
 var path = {
     vendor:{
-        js:'vendor/js/'
+        js:'vendor/js/',
+        style:'libs/'
     },
     dist: {
         php: './',
@@ -35,14 +36,12 @@ var path = {
         fonts: 'fonts/'
     },
     src: {
-        php:'*.php',
         js: 'js/*.js',
-        style:'style/**/*.scss',
+        style:'style/style.scss',
         img: 'img/**/*.*',
         fonts: 'fonts/**/*.*'
     },
     watch: {
-        php: '*.php',
         js: 'js/**/*.js',
         style: 'style/**/*.scss',
         img: 'img/**/*.*',
@@ -60,30 +59,36 @@ var config = {
 };
 
 gulp.task('jsVendor', function() {
-    var files = (mainBowerFiles({ filter: new RegExp('.*js$', 'i') }));
     gulp.src(['bower_components/jquery/dist/jquery.js',
         'bower_components/jquery-ui/jquery-ui.min.js',
         'bower_components/slick-carousel/slick/slick.js', 
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
         'bower_components/isotope/dist/isotope.pkgd.js',
-        'bower_components/masonry/dist/masonry.pkgd.min.js'],files)
+        'bower_components/masonry/dist/masonry.pkgd.min.js'])
         .pipe(gulp.dest(path.vendor.js));
 });
 
+ gulp.task('cssVendor', function() {
+     gulp.src(['bower_components/reset-css/reset.css',
+             'bower_components/bootstrap/dist/css/bootstrap.min.css',
+             'bower_components/font-awesome/css/font-awesome.min.css',
+             'bower_components/slick-carousel/slick/slick.css'])
+         .pipe(gulp.dest(path.vendor.style));
+ });
 
-/*
+
 gulp.task('fontsVendor',['fontsBootstrap'],function () {
-    return gulp.src('./bower_components/!**!/!*.{eot,svg,ttf,woff,woff2}')
+    return gulp.src('./bower_components/**/*.{eot,svg,ttf,woff,woff2}')
         .pipe(flatten())
         .pipe(gulp.dest(path.dist.fonts));
 });
 
 gulp.task('fontsBootstrap', function () {
     return gulp
-        .src('bower_components/bootstrap-sass/assets/fonts/!**!/!*')
+        .src('bower_components/bootstrap/fonts/**/*')
         .pipe(gulp.dest(path.dist.fonts));
     });
-
+/*
 gulp.task('html:build', function () {
 
     gulp.src(path.src.html)
@@ -101,14 +106,14 @@ gulp.task('js:build', function () {
         .pipe(gulp.dest(path.dist.js))
         .pipe(livereload());
 });
-*/
 
+*/
 gulp.task('style:build', function () {
     gulp.src(path.src.style)
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(autoprefixer({browsers: ['last 2 versions']}))
-        .pipe(cssmin())
+  //    .pipe(cssmin())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.dist.style))
         .pipe(livereload());
@@ -124,10 +129,10 @@ gulp.task('image:build', function () {
         .pipe(reload({stream: true}));
 });
  
-/*gulp.task('fonts:build', function() {
+gulp.task('fonts:build', function() {
     gulp.src(path.src.fonts)
         .pipe(gulp.dest(path.dist.fonts))
-});*/
+});
 /*
  gulp.task('video:build', function () {
      gulp.src(path.src.video)
@@ -135,13 +140,15 @@ gulp.task('image:build', function () {
  });*/
  
 gulp.task('build', [
-//  'html:build',
-//  'js:build',
-    'style:build',
-//  'fonts:build',
-    'image:build',
     'jsVendor',
-//  'cssVendor',
+    'cssVendor',
+    'fontsVendor',
+//  'html:build',
+    'js:build',
+    'style:build',
+    'fonts:build',
+    'image:build'
+
 //  'fontsVendor'
 ]);
  
@@ -152,19 +159,24 @@ gulp.task('watch', function(){
     watch([path.watch.style], function(event, cb) {
         gulp.start('style:build');
     });
-   /* watch([path.watch.js], function(event, cb) {
+
+    watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
-    });*/
+    });
+
     watch([path.watch.img], function(event, cb) {
         gulp.start('image:build');
     });
-   /* watch([path.watch.fonts], function(event, cb) {
+    watch([path.watch.fonts], function(event, cb) {
         gulp.start('fonts:build');
-    });*/
+    });
 });
+/*
+
 gulp.task('webserver', function () {
     browserSync.init(config);
 });
+*/
 
 gulp.task('clean', function (cb) {
     rimraf(path.clean, cb);

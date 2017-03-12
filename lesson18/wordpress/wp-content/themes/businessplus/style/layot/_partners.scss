@@ -7,17 +7,19 @@
 
   .partners-slider {
     padding: 50px 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
   }
 }
-.partner {
+.partner-item {
+  margin: 40px 0 20px;
   width: 104px;
-  height: 94px;
+  height: 128px;
+  border: 1px solid #eaeff3;
   overflow: hidden;
   img{
-    width: auto;
+    height: auto;
+    width: 75%;
+    padding: 20px;
+    margin: 0 auto;
   }
 }
 

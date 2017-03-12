@@ -5,12 +5,9 @@ header {
 .logo {
   display: inline-flex;
   margin: -10px 10px 0 0;
-  width: 164px;
-  height: 40px;
-
   a {
     width: 164px;
-    height: 34px;
+    height: 40px;
     overflow: hidden;
   }
 }
@@ -25,7 +22,7 @@ header {
     content: "";
     margin-right: 10px;
     display: inline-flex;
-    background: url("../img/phone-icon.png") no-repeat;
+    background: url("img/phone-icon.png") no-repeat;
     width: 23px;
     height: 23px;
     line-height: 23px;
@@ -33,16 +30,16 @@ header {
   }
 }
 .navbar-default {
+
   background: transparent;
   border: none;
   font: 700 14px "Open Sans";
   text-transform: uppercase;
 }
 .navbar{
-
   margin-bottom: 0;
+  padding-top: 7px;
 }
-
 
 
 .navbar-default{
@@ -65,6 +62,7 @@ header {
     justify-content: space-around;
     li {
       line-height: 30px;
+      padding-left: 20px;
       &:hover, &:focus {
         outline: none;
         .submenu{
@@ -73,11 +71,10 @@ header {
       }
       a{
         color: #FFFFFF;
-        &:hover, &:focus {
 
+        &:hover, &:focus {
           outline: none;
           color: $secondary-color;
-
         }
       }
     }
@@ -113,7 +110,7 @@ header {
 @media screen and (min-width: 430px) {
   .contact-phone-number {
     display: inline-block;
-    padding: 0 0 0 10px;
+    padding-left: 10px;
     border-left: 1px solid rgba(255, 255, 255, 0.15);
   }
 }

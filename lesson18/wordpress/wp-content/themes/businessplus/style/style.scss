@@ -1,0 +1,41 @@
+/*
+Theme Name: BusinessPlus
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: businessplus
+Tags:
+
+*/
+  
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+@import "base/typography";
+@import "base/base";
+
+@import "components/buttons";
+@import "components/forms";
+@import "components/sliders";
+
+@import "layot/hero";
+@import "layot/header";
+@import "layot/about";
+@import "layot/services";
+@import "layot/testimonials";
+@import "layot/news";
+@import "layot/partners";
+@import "layot/footer";
+
+@import "pages/404";
+@import "pages/contact";
+@import "pages/blog";
+@import "pages/blog_post";
+@import "pages/testimonials";
+@import "pages/services-page";
+@import "pages/faq";
+@import 'pages/news-page';

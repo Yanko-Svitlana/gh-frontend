@@ -44,7 +44,8 @@ function businessplus_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'businessplus' ),
+		'main_menu' => esc_html__( 'Primary', 'businessplus' ),
+		'menu_footer' => esc_html__( 'Footer menu', 'businessplus')
 	) );
 
 	/*
@@ -105,17 +106,139 @@ add_action( 'widgets_init', 'businessplus_widgets_init' );
  * Enqueue scripts and styles.
  */
 function businessplus_scripts() {
-	wp_enqueue_style( 'businessplus-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'businessplus-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+	wp_enqueue_style( 'businessplus-raleway', '//fonts.googleapis.com/css?family=Raleway:400,500,600,700,800');
+	wp_enqueue_style( 'businessplus-lora', '//fonts.googleapis.com/css?family=Lora:400,400i');
 
+	wp_enqueue_style( 'reset', get_template_directory_uri(). '/libs/reset.css');
+
+	wp_enqueue_style('bootstrap', get_template_directory_uri(). '/libs/bootstrap.min.css');
+
+	wp_enqueue_style('fontawesome', get_template_directory_uri(). '/libs/font-awesome.min.css');
+
+	wp_enqueue_style('slick', get_template_directory_uri(). '/libs/slick.css');
+
+	wp_enqueue_style( 'businessplus-style', get_stylesheet_uri() );
+	
 	wp_enqueue_script( 'businessplus-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'businessplus-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/vendor/js/bootstrap.min.js', array(),'', true);
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/js/slick.js', array(), '', true);
 
+	wp_enqueue_script( 'businessplus-slider', get_template_directory_uri().'/js/slider.js', array(), '20170311', true);
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'businessplus_scripts' );
+
+/*****************Custom Post types**************************/
+/**
+ * Icons for Type:
+ * https://developer.wordpress.org/resource/dashicons/
+ */
+
+function create_services() {
+	register_post_type( 'services',
+		array(
+			'labels' => array(
+				'name' => 'Services',
+				'singular_name' => 'Service',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New service',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit service',
+				'new_item' => 'New service',
+				'view' => 'View',
+				'view_item' => 'View service',
+				'search_items' => 'Search',
+				'not_found' => 'No found',
+				'not_found_in_trash' => 'No in Trash',
+				'parent' => 'Parent'
+			),
+			'public' => true,
+			'menu_position' => 5,
+			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+			'taxonomies' => array( '' ),
+			'has_archive' => true,
+			'menu_icon' =>  'dashicons-admin-generic',
+			'has_archive' => true,
+		)
+	);
+	flush_rewrite_rules();
+}
+add_action( 'init', 'create_services' );
+
+function allowAuthorEditing()
+{
+	add_post_type_support( 'testimonials', 'author' );
+}
+add_action('init','allowAuthorEditing');
+
+
+function create_testimonials() {
+	register_post_type( 'testimonials',
+		array(
+			'labels' => array(
+				'name' => 'Testimonials',
+				'singular_name' => 'Testimonial',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New testimonial',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit testimonial',
+				'new_item' => 'New testimonial',
+				'view' => 'View',
+				'view_item' => 'View testimonial',
+				'search_items' => 'Search',
+				'not_found' => 'No found',
+				'not_found_in_trash' => 'No in Trash',
+				'parent' => 'Parent'
+			),
+			'public' => true,
+			'menu_position' => 8,
+			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'author' ),
+			'taxonomies' => array( '' ),
+			'menu_icon' => 'dashicons-testimonial',
+			'has_archive' => true
+		)
+	);
+	flush_rewrite_rules();
+}
+add_action( 'init', 'create_testimonials' );
+
+function create_partners() {
+	register_post_type( 'partners',
+		array(
+			'labels' => array(
+				'name' => 'Partners',
+				'singular_name' => 'Partner',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New partner',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit partner',
+				'new_item' => 'New partner',
+				'view' => 'View',
+				'view_item' => 'View partner',
+				'search_items' => 'Search',
+				'not_found' => 'No found',
+				'not_found_in_trash' => 'No in Trash',
+				'parent' => 'Parent'
+			),
+			'public' => true,
+			'menu_position' => 8,
+			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+			'taxonomies' => array( '' ),
+			'menu_icon' => 'dashicons-groups',
+			'has_archive' => true
+		)
+	);
+	flush_rewrite_rules();
+}
+add_action( 'init', 'create_partners' );
+
+
+
 
 /**
  * Implement the Custom Header feature.
@@ -141,3 +264,32 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+/**
+ * Pagination
+ */
+add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
+function my_navigation_template( $template, $class ){
+	/*
+	Вид базового шаблона:
+	<nav class="navigation %1$s" role="navigation">
+		<h2 class="screen-reader-text">%2$s</h2>
+		<div class="nav-links">%3$s</div>
+	</nav>
+	*/
+
+	return '
+	<nav class="navigation %1$s" role="navigation">
+		<div class="nav-links">%3$s</div>
+	</nav>    
+	';
+}
+
+//Page Slug Body Class
+function add_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );

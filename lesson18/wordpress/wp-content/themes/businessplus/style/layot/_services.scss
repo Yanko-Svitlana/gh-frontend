@@ -26,7 +26,8 @@
       filter: grayscale(0);
     }
   }
-  .heading{
+  .heading {
+    margin-top: 0px;
     &:hover, &:focus {
       color: $font-main-color;
       &::before {
