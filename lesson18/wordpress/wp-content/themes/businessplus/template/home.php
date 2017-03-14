@@ -61,7 +61,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="testimonials section">
+    <section class="testimonials section" id="testimonials">
         <div class="container">
             <div class="section-heading">
                 <h2><?php echo get_theme_mod('home_testimonials_title', 'Clients'); ?></h2>
@@ -78,7 +78,9 @@ get_header(); ?>
                         $testim_query -> the_post();?>
 
                         <div class="testimonial-item">
-                            <?php the_content(); ?>
+                            <?php the_content();?>
+                            <h3><?php  the_author();?></h3>
+                            <span class="category">Designation</span>
                         </div>
 
                     <?php endwhile;
@@ -90,7 +92,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="news section">
+    <section class="news section" id="news">
         <div class="container">
             <div class="section-heading">
                 <h2><?php echo get_theme_mod('home_news_title', 'News'); ?></h2>
@@ -141,7 +143,7 @@ get_header(); ?>
         </div>
     </section>
 
-    <section class="partners section">
+    <section class="partners section" id="partners">
         <div class="container">
             <div class="section-heading">
                 <h2><?php echo get_theme_mod('home_partners_title', 'Partners'); ?></h2>

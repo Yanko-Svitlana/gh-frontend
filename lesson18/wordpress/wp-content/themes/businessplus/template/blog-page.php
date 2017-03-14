@@ -29,7 +29,7 @@ get_header()?>
                                 <img src="<?php echo get_template_directory_uri() ?>./img/admin-photo.png" alt="Author">
                             </div>
                             <div class="col-xs-11 post-content">
-                                <h3 class="post-heading"><a href="<?php the_permalink('single-blog.php'); ?>"> <?php the_title(); ?> </a></h3>
+                                <h3 class="post-heading"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a></h3>
 
                                 <span class="posted">
                                             Posted by:

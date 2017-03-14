@@ -123,6 +123,7 @@ function businessplus_scripts() {
 	wp_enqueue_script( 'businessplus-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'businessplus-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/vendor/js/bootstrap.min.js', array(),'', true);
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/js/slick.js', array(), '', true);
 
@@ -237,9 +238,37 @@ function create_partners() {
 }
 add_action( 'init', 'create_partners' );
 
+/********************* Customizer action from database*************************/
 
+function display_options_customizer_css(){
+?>
+	<style type="text/css">
+		<?php if( false === get_theme_mod( 'display_about_us' ) ) {?>
+		#about { display: none; }
+		<?php } ;// end if ?>
 
+		<?php if( false === get_theme_mod( 'display_services' ) ) {?>
+		#services { display: none; }
+		<?php } ;// end if ?>
 
+		<?php if( false === get_theme_mod( 'display_testimonials' ) ) {?>
+		#testimonials { display: none; }
+		<?php } ;// end if ?>
+
+		<?php if( false === get_theme_mod( 'display_news' ) ) {?>
+		#news { display: none; }
+		<?php } ;// end if ?>
+
+		<?php if( false === get_theme_mod( 'display_partners' ) ) {?>
+		#partners { display: none; }
+		<?php } ;// end if ?>
+	</style>
+
+<?php
+
+}add_action( 'wp_head', 'display_options_customizer_css' );
+
+/**************************/
 /**
  * Implement the Custom Header feature.
  */
@@ -267,6 +296,8 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
  * Pagination
  */
+
+
 add_filter('navigation_markup_template', 'my_navigation_template', 10, 2 );
 function my_navigation_template( $template, $class ){
 	/*

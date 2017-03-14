@@ -23,6 +23,7 @@
 <body <?php body_class(); ?>>
 
 <?php
+
 global $post;
 if ( isset( $post ) ) {
 	$classesName = $post->post_type . '-' . $post->post_name;
@@ -89,6 +90,7 @@ if ( isset( $post ) ) {
 		?>
 	</div>
 </section>
+
 
 
 

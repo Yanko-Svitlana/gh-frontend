@@ -17,7 +17,7 @@
     }
   }
 }
-.testimonials-slider{
+.testimonials-slider, .partners-slider{
   .slick-dots {
     display: inline-flex;
 
@@ -35,31 +35,8 @@
     }
     >li.slick-active {
       button {
-        color: #ffaf36;
-      }
-    }
-  }
-}
-
-.partners-slider{
-  .slick-dots {
-    display: inline-flex;
-
-    >li {
-      button {
-        display: block;
-        border: 1px solid #36a8ff;
-        border-radius: 25px;
-        width: 9px;
-        height: 15px;
-        margin: 0 5px;
-        font-size: 0;
-        background: #36a8ff;
-      }
-    }
-    >li.slick-active {
-      button {
-        color: #ffaf36;
+        border: 1px solid #ffaf36;
+        background: #ffaf36;
       }
     }
   }
