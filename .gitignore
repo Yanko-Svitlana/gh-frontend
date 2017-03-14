@@ -140,21 +140,21 @@ jspm_packages
 .yarn-integrity
 
 ### WordPress ###
-wp-admin/
-wp-includes/
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/themes/twentyseventeen/
+lesson18/wordpress/wp-admin/
+lesson18/wordpress/wp-includes/
+lesson18/wordpress/wp-config.php
+lesson18/wordpress/wp-content/advanced-cache.php
+lesson18/wordpress/wp-content/backup-db/
+lesson18/wordpress/wp-content/backups/
+lesson18/wordpress/wp-content/blogs.dir/
+lesson18/wordpress/wp-content/cache/
+lesson18/wordpress/wp-content/upgrade/
+lesson18/wordpress/wp-content/uploads/
+lesson18/wordpress/wp-content/wp-cache-config.php
+lesson18/wordpress/wp-content/plugins/
+lesson18/wordpress/wp-content/upgrade/
+lesson18/wordpress/wp-content/uploads/
+
 
 /.htaccess
 /license.txt
