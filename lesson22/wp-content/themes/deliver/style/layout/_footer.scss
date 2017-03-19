@@ -1,0 +1,92 @@
+.site-footer{
+  background: #333333;
+  padding: 60px 0;
+}
+.footer.site-title a,{
+  color: #efefef;
+}
+.contact-info h2, .nav-footer h2, .newsletter h2{
+  color: #efefef;
+  padding-bottom: 30px;
+  font: 18px $font__main;
+  text-transform: uppercase;
+}
+
+.logo-footer{
+  display: flex;
+  justify-content: space-between;
+
+  >p{
+    padding: 30px 0;
+    font: 14px $font__helvetica;
+  }
+}
+
+.contact-info{
+  li{
+    display: block;
+    margin-bottom: 20px;
+  }
+  address, .company-email{
+    max-width: 160px;
+    font: 14px $font__helvetica;
+  }
+  .company-email{
+    color: $color__text-main;
+    &:hover, &:focus{
+      color: #fefefe
+    }
+  }
+  .phone-number{
+    margin-top: 20px;
+    font: 16px $font__main;
+    color: #fefefe;
+  }
+}
+
+.footer-menu{
+  display: block;
+  padding-top: 0;
+
+  >li{
+    padding-bottom: 10px;
+    font: 14px $font__helvetica;
+    text-transform: none;
+    a{
+      padding-left: 15px;
+      &:hover, &:focus{
+        color: #fefefe;
+      }
+    }
+
+    &::after{
+      content: ">";
+      display: block;
+      margin-top: -19px;
+      color: #fefefe;
+      font-weight: 600;
+    }
+  }
+}
+
+input[type="email"]{
+  padding: 15px;
+  width: 160px;
+  height: 40px;
+  background: #4e4c4c;
+  border: none;
+  color: #fefefe;
+  font: 14px $font__helvetica;
+}
+
+.newsletter{
+  input[type="submit"]{
+    width: 53px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background: #828282;
+    color: #fefefe;
+    font: 14px $font__main;
+  }
+}

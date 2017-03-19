@@ -152,9 +152,12 @@ wordpress/wp-content/upgrade/
 wordpress/wp-content/uploads/
 wordpress/wp-content/wp-cache-config.php
 wordpress/wp-content/plugins/
-wordpress/wp-content/upgrade/
-wordpress/wp-content/uploads/
-
+wordpress/wp/content/themes/businessplus/bower-components
+wordpress/wp/content/themes/businessplus/node-modules
+wordpress/wp/content/themes/businessplus/style
+wordpress/wp/content/themes/deliver/bower-components
+wordpress/wp/content/themes/deliver/node-modules
+wordpress/wp/content/themes/deliver/style
 
 /.htaccess
 /license.txt

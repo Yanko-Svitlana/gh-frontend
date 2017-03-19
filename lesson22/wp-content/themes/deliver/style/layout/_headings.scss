@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5{
+  margin: 0;
+  padding: 0;
+  color: $color__headings;
+}
+p{
+  font: 16px $font__helvetica;
+  color: $color__text-main;
+}
+
+.site-title{
+  font: $font__logo;
+  a {
+    color: $color__headings;
+  }
+  &:hover, &focus{
+    color: $color__hover_text;
+  }
+}
+
+.page-heading{
+  padding: 15px 0;
+  background: url('img/page-title.png') center no-repeat;
+  color: #fff;
+  font: 36px $font__main;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.subheading{
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+
+  p{
+    margin: 0 auto;
+    max-width: 840px;
+    padding: 30px 0 60px;
+  }
+}
+

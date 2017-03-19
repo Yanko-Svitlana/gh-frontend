@@ -1,0 +1,30 @@
+.btn{
+  margin: 0 auto;
+  display: block;
+  width: 120px;
+  border: 1px solid #fff;
+  color: #fff;
+  font: 14px $font__main;
+  text-transform: uppercase;
+
+  &:hover,&:focus{
+    background: #fff;
+    color: $color__headings;
+  }
+}
+
+.btn-find-out{
+  font: 16px $font__helvetica;
+
+  &:hover, &:focus{
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+.purchase.btn{
+  background: #87b672;
+  &:hover,&:focus{
+    transform: scale(1.2);
+  }
+}
