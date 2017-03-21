@@ -139,7 +139,7 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 -------------------------------------------------------------------
-.gitignore for WordPress
+#gitignore for WordPress
 #
 # NOTES:
 # The purpose of gitignore files is to ensure that certain files not
@@ -154,7 +154,7 @@ jspm_packages
 # -----------------------------------------------------------------
 
 # ignore everything in the root except the "wp-content" directory.
-/*
+lesson23/*
 !wp-content/
 !blog_name.sql
 
@@ -189,13 +189,11 @@ Thumbs.db
 *.zip
 
 # ignore everything in the "wp-content" directory, except:
-# "mu-plugins" directory
 # "plugins" directory
 # "themes" directory
 wp-content/*
-!wp-content/mu-plugins/
 !wp-content/plugins/
-!wp-content/themes/blog-name/
+!wp-content/themes/
 
 # ignore these plugins from the core
 wp-content/plugins/hello.php
@@ -204,9 +202,6 @@ wp-content/plugins/akismet/
 # ignore specific themes
 wp-content/themes/twenty*/
 
-# ignore node/grunt/bower dependency directories
-node_modules/
-bower_components/
 # Other
 
 
