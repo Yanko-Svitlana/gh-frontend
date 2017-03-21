@@ -154,8 +154,10 @@ jspm_packages
 # -----------------------------------------------------------------
 
 # ignore everything in the root except the "wp-content" directory.
+lesson22/*
 lesson23/*
-!wp-content/
+!lesson22/wp-content/
+!delivery.sql
 !blog_name.sql
 
 # ignore all files starting with .
