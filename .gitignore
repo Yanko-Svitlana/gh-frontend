@@ -156,7 +156,7 @@ jspm_packages
 # ignore everything in the root except the "wp-content" directory.
 /*
 !wp-content/
-!deliver.sql
+!blog_name.sql
 
 # ignore all files starting with .
 .*
@@ -195,7 +195,7 @@ Thumbs.db
 wp-content/*
 !wp-content/mu-plugins/
 !wp-content/plugins/
-!wp-content/themes/
+!wp-content/themes/blog-name/
 
 # ignore these plugins from the core
 wp-content/plugins/hello.php
