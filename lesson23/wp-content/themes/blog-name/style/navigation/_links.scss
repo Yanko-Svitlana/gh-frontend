@@ -1,0 +1,11 @@
+a {
+	color: $color__link;
+	text-decoration: none;
+
+	&:hover,
+	&:focus
+	 {
+		text-decoration: none;
+	}
+
+}

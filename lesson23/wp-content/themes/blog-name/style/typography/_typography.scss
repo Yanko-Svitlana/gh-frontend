@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,700');
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+@import "headings";
+
+@import "copy";

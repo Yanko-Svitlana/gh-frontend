@@ -1,0 +1,11 @@
+.site-branding{
+  display: flex;
+  justify-content: space-between;
+}
+.site-title {
+  margin: 20px 0;
+  a {
+    color: $color__brand;
+  }
+}
+
