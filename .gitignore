@@ -154,7 +154,6 @@ jspm_packages
 # -----------------------------------------------------------------
 
 # ignore everything in the root except the "wp-content" directory.
-lesson22/*
 lesson23/*
 !lesson23/wp-content/
 !delivery.sql
@@ -193,8 +192,9 @@ Thumbs.db
 # ignore everything in the "wp-content" directory, except:
 # "plugins" directory
 # "themes" directory
-wp-content/*
-!wp-content/plugins/
+lesson23/wp-content/plugins/*
+lesson23/wp-content/uploads/*
+
 !wp-content/themes/blog-name
 
 # ignore these plugins from the core

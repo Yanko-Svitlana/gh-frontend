@@ -51,6 +51,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
+@import "elements/slider";
+@import "elements/widgets";
 
 /*--------------------------------------------------------------
 # Forms
@@ -100,4 +102,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /*--------------------------------------------------------------
 # Custom styles
 --------------------------------------------------------------*/
+@import "layout/footer";
+@import "layout/galerry";
 @import "layout/header";
+@import "layout/content";
+@import "layout/content-conact-page";
+@import "layout/sidebar";
+
+
+

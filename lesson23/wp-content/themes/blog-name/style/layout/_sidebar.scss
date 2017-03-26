@@ -1,0 +1,50 @@
+.subscribe-form, .contact-info{
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 5px solid #e2e2e2;
+
+  h2{
+    margin-top: 0;
+    color: #222222;
+    font: 700 16px $font__main;
+    text-transform: uppercase;
+  }
+
+}
+.sidebar-banner{
+  display: block;
+  max-width: 299px;
+  height: auto;
+  border: 1px solid #cecece;
+}
+
+.phone-number, .email{
+  padding: 10px;
+  display: block;
+  width: 100%;
+  background: $color__brand;
+  font: 18px $font__main;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  .fa{
+    padding-right: 10px;
+    color: #fff;
+    font-size: 30px;
+  }
+}
+
+.phone-number{
+  font-weight: 700;
+}
+
+.email{
+  font-weight: 300;
+}
+
+.small-exp{
+  padding: 10px 0;
+  color: #7f7c7c;
+  font: 12px "Arial",sana-serif;
+}

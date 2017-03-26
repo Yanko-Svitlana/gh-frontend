@@ -3,9 +3,20 @@
   justify-content: space-between;
 }
 .site-title {
+  position: relative !important;
   margin: 20px 0;
   a {
+    font: 30px $font__main;
+    text-transform: uppercase;
     color: $color__brand;
   }
+}
+.first-word{
+  font-weight: 300;
+}
+
+.second-word{
+  font-weight: 700;
+  color: #fff
 }
 

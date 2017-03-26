@@ -5,7 +5,12 @@ a {
 	&:hover,
 	&:focus
 	 {
+		color: $color__brand;
 		text-decoration: none;
 	}
 
+}
+
+.entry-title{
+	font: 20px $font__main;
 }

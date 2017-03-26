@@ -28,9 +28,19 @@
 			<div class="site-branding">
 				<?php
 				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<span class="first-word"><?php echo get_theme_mod('first_word'); ?></span>
+							<span class="second-word"><?php echo get_theme_mod('second_word'); ?></span>
+						</a>
+					</h1>
 				<?php else : ?>
-					<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+					<h2 class="site-title">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+							<span class="first-word"><?php echo get_theme_mod('first_word'); ?></span>
+							<span class="second-word"><?php echo get_theme_mod('second_word'); ?></span>
+						</a>
+					</h2>
 					<?php
 				endif;
 

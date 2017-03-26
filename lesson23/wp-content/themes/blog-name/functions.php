@@ -45,6 +45,7 @@ function blog_name_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'main-menu' => esc_html__( 'Primary', 'blog-name' ),
+		'social-links-menu' => esc_html__( 'Social links menu', 'blog-name' ),
 	) );
 
 	/*
@@ -98,6 +99,16 @@ function blog_name_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Contact sidebar', 'blog-name' ),
+		'id'            => 'contact_sidebar',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Contact form', 'blog-name' ),
+		'id'            => 'contact_form',
+	) );
 }
 add_action( 'widgets_init', 'blog_name_widgets_init' );
 
@@ -120,13 +131,52 @@ function blog_name_scripts() {
 
 	wp_enqueue_script( 'blog-name-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'deliver-slider', get_template_directory_uri() . '/js/slider.js', array(), '', true );
+	wp_enqueue_script( 'blog-name-masonry', get_template_directory_uri() . '/vendor/js/masonry.pkgd.min.js', array(), '', true );
+	wp_enqueue_script( 'blog-name-slick', get_template_directory_uri() . '/vendor/js/slick.js', array(), '', true );
+
+
+	wp_enqueue_script( 'blog-name-custom', get_template_directory_uri() . '/js/main.js', array(), '', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blog_name_scripts' );
+
+/**
+ * Icons for Type:
+ * https://developer.wordpress.org/resource/dashicons/
+ */
+
+function create_post_types() {
+	register_post_type( 'slide',
+		array(
+			'labels' => array(
+				'name' => 'Slides',
+				'singular_name' => 'Slide',
+				'add_new' => 'Add New',
+				'add_new_item' => 'Add New Slide',
+				'edit' => 'Edit',
+				'edit_item' => 'Edit slide',
+				'new_item' => 'New slide',
+				'view' => 'View',
+				'view_item' => 'View slide',
+				'search_items' => 'Search',
+				'not_found' => 'No found',
+				'not_found_in_trash' => 'No in Trash',
+				'parent' => 'Parent'
+			),
+			'public' => true,
+			'menu_position' => 5,
+			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields','excerpt' ),
+			'taxonomies' => array( '' ),
+			'has_archive' => true,
+			'menu_icon' =>  'dashicons-format-gallery',
+		)
+	);
+	flush_rewrite_rules();
+}
+add_action( 'init', 'create_post_types' );
 
 /**
  * Implement the Custom Header feature.

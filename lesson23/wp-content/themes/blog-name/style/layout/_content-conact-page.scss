@@ -1,0 +1,32 @@
+.contact-description{
+  padding-top: 120px;
+  width: 235px;
+  float: left;
+  overflow: visible;
+
+  .entry-title{
+    margin-bottom: 30px;
+    color: #272726;
+    font: 700 36px/24px $font__main;
+    text-transform: uppercase;
+
+  }
+}
+
+.subtitle{
+  margin-bottom: 20px;
+  color: #040303;
+  font: 700 16px "Arial",sans-serif,
+}
+
+.desc{
+  color: 878585;
+  font: 400 14px "Arial",sans-serif;
+
+}
+
+.contact-image{
+  float: right;
+  margin-top: -275px;
+  margin-right: -30px;
+}
