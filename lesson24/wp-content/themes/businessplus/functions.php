@@ -112,8 +112,8 @@ function businessplus_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'businessplus' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="footer-title">',
-		'after_title'   => '</h2>'
+		'before_title'  => '<h3 class="footer-title">',
+		'after_title'   => '</h3>'
 	) );
 }
 
@@ -179,3 +179,53 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+//Filters
+add_filter("the_excerpt", "break_text");
+function break_text($text){
+	$length = 450;
+	if(strlen($text)<$length+10) return $text;//don't cut if too short
+
+	$break_pos = strpos($text, ' ', $length);//find next space after desired length
+	$visible = substr($text, 0, $break_pos);
+	return balanceTags($visible) . " …</p>";
+}
+
+
+
+function sort_comment_fields( $fields ){
+	if ( isset($fields['url'] ))
+		unset ( $fields['url'] );
+
+	if ( isset($fields['comment_field'] )) {
+		unset ( $fields['comment_field'] );
+		$fields['comment_field'] =
+			'<p class="comment-form-comment">
+			 <label for="comment">' . _x('Comment', 'noun') . '<span class="required">*</span></label>
+			 <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>';
+	};
+
+	$fields['phone_number'] =
+		'<p class="comment-form-phone">
+		<label for="phone-number">	' . __( 'Phone Number' ) . '	<span class="required">*</span></label>
+		<input type="tel" id="phone" name="phone" value="" size="30" aria-required="true" required>
+		</p>';
+
+	$new_fields = array();
+	$myorder = array('author','email','phone_number','comment');
+
+	if ( isset($fields['url'] ))
+		unset ( $fields['url'] );
+
+	foreach( $myorder as $key ){
+		$new_fields[ $key ] = $fields[ $key ];
+		unset( $fields[ $key ] );
+	}
+
+	if( $fields )
+		foreach( $fields as $key => $val )
+			$new_fields[ $key ] = $val;
+	return $new_fields;
+}
+add_filter('comment_form_fields', 'sort_comment_fields' );
+

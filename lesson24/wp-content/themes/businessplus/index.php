@@ -22,7 +22,8 @@ get_header(); ?>
 
 					if ( is_home() && ! is_front_page() ) : ?>
 						<header>
-							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+							<h1 class="page-title"><?php single_post_title(); ?></h1>
+							<p class="subtitle"><?php the_field('description', get_option('page_for_posts'));?></p>
 						</header>
 
 						<?php
@@ -38,14 +39,18 @@ get_header(); ?>
                          */
 						get_template_part( 'template-parts/content', get_post_format() );
 
-					endwhile;
-
-					the_posts_navigation();
-
+					endwhile;?>
+					 <div class="pagination">
+						 <?php $args = array('post_type' => 'post');
+						 		$query = new WP_Query($args);
+						 		echo paginate_links(array(
+                                        'total'     =>$query->max_num_pages,
+                                        'prev_next' =>false
+                            ));?>
+					 </div>
+				<?php
 				else :
-
 					get_template_part( 'template-parts/content', 'none' );
-
 				endif; ?>
 
 			</div>

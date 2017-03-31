@@ -30,6 +30,7 @@
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+					<h3 class="footer-title">Navigation</h3>
 					<nav id="site-navigation" class="footer-navigation" role="navigation">
 						<?php wp_nav_menu( array( 'theme_location' => 'footer-menu', 'menu_id' => 'footer-menu' ) ); ?>
 					</nav><!-- #site-navigation -->
@@ -37,11 +38,6 @@
 				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-5">
 					<?php dynamic_sidebar('footer-form');?>
 				</div>
-				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'businessplus' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'businessplus' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'businessplus' ), 'businessplus', '<a href="https://automattic.com/" rel="designer">Yanko Svitlana</a>' ); ?>
-				</div><!-- .site-info -->
 			</div>
 		</div>
 	</footer><!-- #colophon -->
