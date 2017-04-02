@@ -53,7 +53,7 @@ get_header(); ?>
 					get_template_part( 'template-parts/content', 'none' );
 				endif; ?>
 
-			</div>
+			</div><!--.container-->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

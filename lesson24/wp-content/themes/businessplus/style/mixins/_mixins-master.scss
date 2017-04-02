@@ -22,3 +22,13 @@
 @mixin clearfix-after() {
 	clear: both;
 }
+
+@mixin triangles {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 15px;
+	background: url("img/triangles.png") no-repeat;
+	width: 218px;
+	height: 101px;
+}

@@ -39,4 +39,37 @@
 			}
 		} );
 	} );
+
+	//displaying sections on homepage
+
+	wp.customize( 'display_about_us', function( value ) {
+		value.bind( function( to ) {
+			false === to ? $( '#about' ).hide() : $( '#about' ).show();
+		} );
+	} );
+
+	wp.customize( 'display_services', function( value ) {
+		value.bind( function( to ) {
+			false === to ? $( '#services' ).hide() : $( '#services' ).show();
+		} );
+	} );
+
+	wp.customize( 'display_testimonials', function( value ) {
+		value.bind( function( to ) {
+			false === to ? $( '#testimonials' ).hide() : $( '#testimonials' ).show();
+		} );
+	} );
+
+	wp.customize( 'display_news', function( value ) {
+		value.bind( function( to ) {
+			false === to ? $( '#news' ).hide() : $( '#news' ).show();
+		} );
+	} );
+
+	wp.customize( 'display_partners', function( value ) {
+		value.bind( function( to ) {
+			false === to ? $( '#partners' ).hide() : $( '#partners' ).show();
+		} );
+	} );
+
 } )( jQuery );

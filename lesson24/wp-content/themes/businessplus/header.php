@@ -25,6 +25,7 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
+
 			<div class="site-branding">
 				<?php
 					if ( is_front_page() && is_home() ) : ?>

@@ -15,7 +15,9 @@ get_header(); ?>
 		<div class="container">
 			<?php
 			while ( have_posts() ) : the_post();
-
+				if(get_the_ID()){
+					update_post_meta( get_the_ID(),'views_count',get_post_meta( get_the_ID(),'views_count',true )+1 );
+				};
 				get_template_part( 'template-parts/content', get_post_format());
 
 
