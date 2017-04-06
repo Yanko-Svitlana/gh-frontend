@@ -192,8 +192,8 @@ Thumbs.db
 # ignore everything in the "wp-content" directory, except:
 # "plugins" directory
 # "themes" directory
-wp-content/plugins/*
-wp-content/uploads/*
+gh-exam/wp-content/plugins/*
+gh-exam/wp-content/uploads/*
 !wp-content/themes/gh-exam
 
 # ignore these plugins from the core
