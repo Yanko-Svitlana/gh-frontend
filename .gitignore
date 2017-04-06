@@ -192,7 +192,7 @@ Thumbs.db
 # ignore everything in the "wp-content" directory, except:
 # "plugins" directory
 # "themes" directory
-!wp-content/plugins/*
+wp-content/plugins/*
 wp-content/uploads/*
 !wp-content/themes/gh-exam
 
