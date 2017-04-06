@@ -154,10 +154,10 @@ jspm_packages
 # -----------------------------------------------------------------
 
 # ignore everything in the root except the "wp-content" directory.
-lesson23/*
-!lesson23/wp-content/
-!delivery.sql
-!blog_name.sql
+gh-exam/*
+!gh-exam/wp-content/
+!gh_exam.sql
+
 
 # ignore all files starting with .
 .*
@@ -192,10 +192,9 @@ Thumbs.db
 # ignore everything in the "wp-content" directory, except:
 # "plugins" directory
 # "themes" directory
-lesson23/wp-content/plugins/*
-lesson23/wp-content/uploads/*
-
-!wp-content/themes/blog-name
+!wp-content/plugins/*
+wp-content/uploads/*
+!wp-content/themes/gh-exam
 
 # ignore these plugins from the core
 wp-content/plugins/hello.php
