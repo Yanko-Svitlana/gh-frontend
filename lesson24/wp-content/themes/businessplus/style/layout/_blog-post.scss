@@ -1,0 +1,27 @@
+blockquote.quote {
+  margin: 0 0 45px 95px;
+  background: #fef1de;
+  border-left: 4px solid #ffaf36;
+  P{
+    padding: 0;
+  }
+}
+.author-info{
+  margin-top: 60px;
+}
+.about-author{
+  background: #36a8ff;
+  padding: 40px;
+  color: #fff;
+  line-height: 28px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    margin-top: 32px;
+    margin-left: -50px;
+    border-right: 10px solid #36a8ff;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+}

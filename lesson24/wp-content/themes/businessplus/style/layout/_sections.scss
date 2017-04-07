@@ -1,0 +1,134 @@
+section.section{
+  display: block;
+  padding: 100px 0;
+
+  &:nth-of-type(2n){
+    background: #eaeff3;
+  }
+}
+
+p{
+  font: 14px/28px $font__open_sans;
+  color: $color__link-hover;
+}
+
+//Service section
+.service-item{
+  &:hover, &:focus{
+    .service-icon{
+      filter: grayscale(0);
+    }
+  }
+}
+.service-icon{
+  filter: grayscale(100%);
+}
+.service-content{
+  margin-bottom: 50px;
+}
+
+//Testimonial section
+.testimonial-item{
+  position: relative;
+  &:nth-child(n){
+    &::before{
+      content: '';
+      position: absolute;
+      margin-top: -24px;
+      width: 93px;
+      height: 61px;
+      z-index: 0;
+    }
+  }
+  &:nth-child(3n) {
+    &::before {
+      background: url('img/quote-icon-orange.png') no-repeat;
+    }
+  }
+
+  &:nth-child(3n+1) {
+    &::before {
+      background: url('img/quote-icon-gray.png') no-repeat;
+    }
+  }
+
+  &:nth-child(3n+2) {
+    &::before {
+      background: url('img/quote-icon-blue.png') no-repeat;
+    }
+  }
+}
+.testimonial-author{
+  margin-top: 40px;
+}
+
+
+//News section
+.counter {
+  text-align: right;
+  li {
+    padding-bottom: 10px;
+    &::after {
+      content: "";
+      margin-top: 10px;
+      display: block;
+      width: 65px;
+      height: 1px;
+      background: url("img/counter-line.png") no-repeat;
+    }
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+    .date {
+      display: block;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .fa {
+      display: block;
+      font-size: 30px;
+    }
+  }
+}
+.news-content{
+  img{
+    margin-bottom: 40px;
+  }
+}
+.news-content-simple {
+  border-bottom: 1px solid #d8dcdf;
+  p{
+    margin: 20px 0 40px;
+  }
+
+  &:nth-child(2n){
+    padding-top: 40px;
+    border: none;
+  }
+}
+.post-date{
+  font: 700 12px $font__open_sans;
+  text-transform: uppercase;
+  color: $color__link;
+}
+
+//Partners section
+
+.partners-item{
+  width: 180px;
+  line-height: 128px;
+  border: 1px solid #eaeff3;
+  text-align: center;
+}
+
+//Triangles
+
+.triangles{
+  &::after {
+    @include triangles;
+  }
+}
+
+

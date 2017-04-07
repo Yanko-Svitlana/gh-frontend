@@ -1,0 +1,65 @@
+.site-footer{
+  padding: 85px 0 95px;
+  background: #2a2b2c;
+  color: #2a2b2c;
+
+  a{
+    color: #7b7b7c;
+
+    &:hover, &focus{
+      color: #fff;
+    }
+
+  }
+
+}
+
+.footer-title{
+  color: #fff;
+}
+
+.widget_ninja_forms_widget{
+  label{
+    color: #737476;
+    font: 14p/28px $font__open_sans;
+  }
+  .ninja-forms-req-symbol{
+    color: $color__link;
+  }
+  input,textarea{
+    background: transparent;
+    color: #fff;
+    outline: none;
+    border: 1px solid #373839;
+  }
+  nf-field{
+    width: 50%;
+  }
+  input.ninja-forms-field{
+    width: 50%;
+    float: left;
+  }
+}
+
+nput[type='button']{
+  display: inline-block;
+  margin-top: 30px;
+  width: 150px;
+  height: 50px;
+  padding: 16px 30px;
+  border: 2px solid $color__link;
+  background: transparent;
+  color: $color__link;
+  text-align: center;
+  font: 700 13px $font__raleway;
+  text-transform: uppercase;
+  outline: none;
+
+
+  &:hover,&:focus{
+    background: $color__link;
+    color: $color__link-hover;
+    outline: none;
+    border: 2px solid $color__link;
+  }
+}

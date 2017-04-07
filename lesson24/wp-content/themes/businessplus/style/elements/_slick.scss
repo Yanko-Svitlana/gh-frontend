@@ -1,0 +1,51 @@
+.hero-slider {
+
+  .slick-dots {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    li button {
+      border: none;
+      width: 25px;
+      height: 4px;
+      margin: 0 5px;
+      font-size: 0;
+      outline: none;
+      background: #8f8f8f;
+    }
+
+    li.slick-active button {
+      background: #ffaf36;
+    }
+  }
+}
+.testimonials-list {
+  .slick-track {
+    padding-top: 20px;
+  }
+}
+.testimonials-list, .partners-list{
+
+  .slick-dots {
+    display: inline-flex;
+
+    >li {
+      button {
+        display: block;
+        border: 1px solid #36a8ff;
+        border-radius: 25px;
+        width: 9px;
+        height: 15px;
+        margin: 0 5px;
+        font-size: 0;
+        background: #36a8ff;
+      }
+    }
+    >li.slick-active {
+      button {
+        border: 1px solid #ffaf36;
+        background: #ffaf36;
+      }
+    }
+  }
+}

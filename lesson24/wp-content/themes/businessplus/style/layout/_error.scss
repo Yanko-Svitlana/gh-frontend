@@ -1,0 +1,28 @@
+.error-404{
+  padding: 100px 0;
+  .container{
+    width: 530px;
+  }
+}
+
+.info-404{
+  .page-content{
+    display: block;
+    background: #ffaf36;
+    border-radius: 10px;
+    font: 12px $font__raleway;
+
+  }
+}
+.title-404{
+  width: 428px;
+  margin: 0 auto;
+  font: 300 72px $font__open_sans;
+
+  span{
+    font-weight: 800;
+    color: #36a8ff;
+  }
+}
+
+

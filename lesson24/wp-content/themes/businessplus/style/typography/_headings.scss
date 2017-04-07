@@ -1,0 +1,64 @@
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	margin: 0;
+	text-transform: uppercase;
+
+	a{
+		color: 	#1c1c1c;
+
+	}
+
+}
+h1{
+	font: 800 30px $font__raleway;
+}
+
+h2{
+	font: 800 30px/24px $font__raleway;
+}
+
+h3{
+	font: 700 18px/24px $font__raleway;
+}
+h4{
+	padding: 30px 0 20px;
+	font: 700 16px $font__raleway;
+}
+h6{
+	padding-top: 10px;
+	font: 700 14px $font__raleway;
+}
+.section-subtitle{
+	color: #1c1c1c;
+	font: italic 14px/30px $font__lora;
+	margin-bottom: 50px;
+}
+.service-item-title, .news-title{
+	font: 700 16px/24px $font__raleway;
+}
+
+.service-item-title {
+	&:hover{
+		a{
+			color: #1c1c1c;
+		}
+		&::before{
+			content: '';
+			display: block;
+			width: 15px;
+			height: 2px;
+			margin-left: 0;
+			margin-top: -2px;
+			background: #36a8ff;
+		}
+	}
+}
+
+.news-title{
+	margin-bottom: 15px;
+	&:hover, &:focus{
+		a{
+			color: $color__link;
+		}
+	}
+}

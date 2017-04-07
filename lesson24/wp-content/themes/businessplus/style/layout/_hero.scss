@@ -1,0 +1,24 @@
+.hero{
+  height: 100vh;
+}
+.intro {
+  padding-top: 320px;
+  max-width: 500px;
+
+  span{
+    color: #fff;
+    font: 600 16px $font__raleway;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  .main-title{
+    color: #fff;
+    font: 600 60px $font__raleway;
+  }
+  p{
+    color: #fff;
+    font: italic 15px $font__lora;
+
+  }
+}

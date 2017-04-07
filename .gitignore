@@ -139,6 +139,10 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 -------------------------------------------------------------------
+bower.json
+package.json
+gulpfile.js
+-------------------------------------------------------------------
 #gitignore for WordPress
 #
 # NOTES:
@@ -200,7 +204,9 @@ gh-exam/wp-content/uploads/*
 wp-content/plugins/hello.php
 wp-content/plugins/akismet/
 
-# ignore specific themes
+# ignore style folder
+
+gh-exam/wp-content/themes/style
 
 
 # Other
